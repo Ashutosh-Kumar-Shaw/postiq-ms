@@ -10,10 +10,14 @@ namespace User.Infrastructure.Extensions
     {
         public static IServiceCollection AddDbContextExtension(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = configuration["DefaultConnection"];            
+            var connectionString = configuration["DefaultConnection"];
             services.AddDbContext<UserDBContext>(options =>
             {
-                options.UseSqlServer(connectionString, o => o.UseCompatibilityLevel(120));
+                options.UseSqlServer(connectionString, o =>
+                {
+                    o.UseCompatibilityLevel(120);
+                    o.MigrationsAssembly("User.API");
+                });
             }).AddUnitOfWork<UserDBContext>();
 
             return services;

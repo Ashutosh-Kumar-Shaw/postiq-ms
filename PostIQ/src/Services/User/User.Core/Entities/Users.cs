@@ -29,5 +29,7 @@ public partial class Users
 
     public virtual ICollection<Published> Publisheds { get; set; } = new List<Published>();
 
+    public virtual ICollection<Post> Posts { get; set; } = new List<Post>();
+
     public virtual UserDetail? UserDetail { get; set; }
 }
