@@ -1,5 +1,10 @@
 using PostIQ.Core.Shared.Extensions;
 using User.Infrastructure.Extensions;
+using System.Threading.Channels;
+using User.Infrastructure.Services;
+using User.Application.BackgroundServices;
+using User.Application.Commands;
+using User.Core.IServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +23,16 @@ var services = builder.Services;
         typeof(User.Application.Handlers.GetUserByIdHandler).Assembly,
         typeof(User.Infrastructure.Repositories.UserRepository).Assembly        
     );
+
+    // Repositories
+
+    // Services
+    services.AddHttpClient<MediumSyncService>();
+    services.AddScoped<ISyncService, MediumSyncService>();
+
+    // Background Jobs
+    services.AddSingleton(Channel.CreateUnbounded<SyncContentCommand>());
+    services.AddHostedService<SyncWorker>();
 }
 
 var app = builder.Build();

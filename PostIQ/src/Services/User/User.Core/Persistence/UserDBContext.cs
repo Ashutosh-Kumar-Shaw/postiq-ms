@@ -23,6 +23,8 @@ public partial class UserDBContext : DbContext
     public virtual DbSet<UserDetail> UserDetails { get; set; }
 
 
+    public virtual DbSet<Post> Posts { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Published>(entity =>
@@ -95,6 +97,23 @@ public partial class UserDBContext : DbContext
                 .HasForeignKey<UserDetail>(d => d.UserDetailId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_UserDetails_User");
+        });
+
+        modelBuilder.Entity<Post>(entity =>
+        {
+            entity.ToTable("Posts", "User");
+            entity.HasKey(e => e.PostId);
+            entity.Property(e => e.ExternalId).HasMaxLength(200);
+            entity.Property(e => e.Source).HasMaxLength(50);
+            entity.Property(e => e.Title).HasMaxLength(500);
+            entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+            entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
+
+            entity.HasOne(d => d.User)
+                .WithMany(p => p.Posts)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_Posts_User");
         });
 
         OnModelCreatingPartial(modelBuilder);
