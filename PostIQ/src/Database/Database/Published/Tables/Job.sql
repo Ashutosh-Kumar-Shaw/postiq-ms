@@ -9,6 +9,9 @@
     [CreatedBy]   BIGINT        NOT NULL,
     [UpdatedOn]   DATETIME      NULL,
     [UpdatedBy]   BIGINT        NULL,
+    [ExecutationStartTime]   DATETIME      NULL,
+    [NextExecutionTime]   DATETIME      NULL,
+    [Status]	  VARCHAR (10)  NULL,
     CONSTRAINT [PK_Published.Job] PRIMARY KEY CLUSTERED ([JobId] ASC)
 );
 
