@@ -10,6 +10,8 @@ namespace PostIQ.Core.BackgroundProcess.Configuration
     /// </summary>
     public static class ScheduleInterval
     {
+        /// <summary>Every 10 sec</summary>
+        public const string TenSec = "10sec";
         /// <summary>Every 1 minute</summary>
         public const string OneMinute = "1min";
         /// <summary>Every 5 minutes</summary>
@@ -61,6 +63,7 @@ namespace PostIQ.Core.BackgroundProcess.Configuration
 
             return interval.ToLowerInvariant() switch
             {
+                "10sec" => TimeSpan.FromSeconds(10),
                 "1min" => TimeSpan.FromMinutes(1),
                 "5min" => TimeSpan.FromMinutes(5),
                 "15min" => TimeSpan.FromMinutes(15),
