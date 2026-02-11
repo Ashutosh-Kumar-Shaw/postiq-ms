@@ -17,8 +17,12 @@ namespace Published.Infrastructure.Jobs.RepoJobs
         }
         public Task<IReadOnlyList<Job>> GetItemsToProcessAsync(int maxItems, CancellationToken cancellationToken = default)
         {
+            //return list of pending jobs
+
             return Task.FromResult<IReadOnlyList<Job>>(new List<Job>
             {
+                //temporary hardcoded data, replace with actual database call
+                //used Job model from db entity, please change as per your actual model in all 3 job files
                 new Job
                 {
                     JobId = 1,
