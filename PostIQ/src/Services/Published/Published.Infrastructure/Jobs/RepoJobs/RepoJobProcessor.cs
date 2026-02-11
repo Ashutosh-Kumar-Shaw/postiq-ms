@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Published.Infrastructure.Services.RepoJobs
+namespace Published.Infrastructure.Jobs.RepoJobs
 {
     public class RepoJobProcessor : IJobItemProcessor<Job>
     {

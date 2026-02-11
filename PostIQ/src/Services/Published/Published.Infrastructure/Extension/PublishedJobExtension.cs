@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PostIQ.Core.BackgroundProcess;
 using PostIQ.Core.BackgroundProcess.Interfaces;
 using Published.Core.Entities;
-using Published.Infrastructure.Services.RepoJobs;
+using Published.Infrastructure.Jobs.RepoJobs;
 
 namespace Published.Infrastructure.Extension
 {

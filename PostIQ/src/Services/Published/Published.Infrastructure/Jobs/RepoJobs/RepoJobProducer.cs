@@ -5,7 +5,7 @@ using PostIQ.Core.Database;
 using Published.Core.Entities;
 using Published.Core.Persistence;
 
-namespace Published.Infrastructure.Services.RepoJobs
+namespace Published.Infrastructure.Jobs.RepoJobs
 {
     public class RepoJobProducer : IJobItemsProducer<Job>
     {
