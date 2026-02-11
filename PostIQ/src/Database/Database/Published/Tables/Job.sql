@@ -4,7 +4,7 @@
     [UserId]      BIGINT        NOT NULL,
     [Source]      VARCHAR (50)  NOT NULL,
     [BaseUrl]     VARCHAR (20)  NOT NULL,
-    [IsActive]    VARCHAR (100) NOT NULL,
+    [IsActive]    BIT NOT NULL,
     [CreatedOn]   DATETIME      NOT NULL,
     [CreatedBy]   BIGINT        NOT NULL,
     [UpdatedOn]   DATETIME      NULL,
