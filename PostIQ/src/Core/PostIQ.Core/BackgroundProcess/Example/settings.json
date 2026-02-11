@@ -1,11 +1,4 @@
-{
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft.AspNetCore": "Warning"
-    }
-  },
-  "DefaultConnection": "Server=localhost,1433;Database=PostIQ_DB;User Id=sa;Password=Password123!;TrustServerCertificate=True;",
+﻿{
   "BackgroundJobs": {
     "Defaults": {
       "Enabled": true,
@@ -15,12 +8,24 @@
       "ProductionIntervalMs": 60000
     },
     "Jobs": {
-      "RepoJob": {
+      "ExampleSync": {
         "Enabled": true,
         "Schedule": "1min",
         "QueueSize": 50,
         "MaxConcurrentConsumers": 3,
         "FullMode": "Wait"
+      },
+      "ExampleHourly": {
+        "Enabled": true,
+        "Schedule": "1hour",
+        "QueueSize": 200,
+        "MaxConcurrentConsumers": 5
+      },
+      "ExampleCron": {
+        "Enabled": true,
+        "Schedule": "*/15 * * * *",
+        "QueueSize": 100,
+        "MaxConcurrentConsumers": 4
       }
     }
   }
