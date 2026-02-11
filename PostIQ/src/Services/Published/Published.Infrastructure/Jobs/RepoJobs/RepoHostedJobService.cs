@@ -10,12 +10,12 @@ using System.Text;
 
 namespace Published.Infrastructure.Jobs.RepoJobs
 {
-    public class RepoHostedJob : BaseBackgroundJobHostedService<Job>
+    public class RepoHostedJobService : BaseBackgroundJobHostedService<Job>
     {
         public new const string JobName = "RepoJob";
-        public RepoHostedJob(
+        public RepoHostedJobService(
             IOptions<BackgroundJobsConfiguration> configuration, 
-            ILogger<RepoHostedJob> logger, 
+            ILogger<RepoHostedJobService> logger, 
             IJobItemsProducer<Job> producer, 
             IJobItemProcessor<Job> processor, 
             IBackgroundJobRegistry registry) : 

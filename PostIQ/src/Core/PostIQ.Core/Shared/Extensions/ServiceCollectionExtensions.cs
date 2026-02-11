@@ -37,9 +37,16 @@ namespace PostIQ.Core.Shared.Extensions
         {
             if (string.IsNullOrWhiteSpace(suffix)) return services;
 
+            // Register only classes named with the given suffix and exclude any hosted/background services.
+            // This prevents types implementing IHostedService/BackgroundService (which may be named *Service)
+            // from being registered as scoped implementations and causing "Cannot resolve scoped service ... IHostedService".
             services.Scan(scan => scan
                 .FromAssemblies(assemblies)
-                .AddClasses(c => c.Where(t => t.Name.EndsWith(suffix, StringComparison.Ordinal)))
+                .AddClasses(c => c.Where(t =>
+                    t.Name.EndsWith(suffix, StringComparison.Ordinal)
+                    && !typeof(BackgroundService).IsAssignableFrom(t)
+                    && !typeof(IHostedService).IsAssignableFrom(t)
+                ))
                 .AsImplementedInterfaces()
                 .WithScopedLifetime());
 
