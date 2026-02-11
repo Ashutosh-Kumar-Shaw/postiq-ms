@@ -44,9 +44,6 @@ public partial class Job
     [Column(TypeName = "datetime")]
     public DateTime? NextExecutionTime { get; set; }
 
-    [StringLength(10)]
-    [Unicode(false)]
-    public string? Status { get; set; }
 
     [InverseProperty("Job")]
     public virtual ICollection<Repo> Repos { get; set; } = new List<Repo>();
