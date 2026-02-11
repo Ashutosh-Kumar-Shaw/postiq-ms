@@ -25,10 +25,10 @@ namespace PostIQ.Core.Shared.Extensions
 
                 // ensure handler interfaces are explicitly wired (IRequestHandler<,>, INotificationHandler<>)
                 .RegisterGenericHandlers(assemblies, typeof(IRequestHandler<,>))
-                .RegisterGenericHandlers(assemblies, typeof(INotificationHandler<>));
+                .RegisterGenericHandlers(assemblies, typeof(INotificationHandler<>))
 
                 // hosted/background workers
-                //.RegisterHostedServices(assemblies);
+                .RegisterHostedServices(assemblies);
 
             return services;
         }

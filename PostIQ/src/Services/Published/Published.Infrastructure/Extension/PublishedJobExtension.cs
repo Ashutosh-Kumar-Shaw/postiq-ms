@@ -16,7 +16,7 @@ namespace Published.Infrastructure.Extension
 
             services.AddSingleton<IJobItemProcessor<Job>, RepoJobProcessor>();
             services.AddSingleton<IJobItemsProducer<Job>, RepoJobProducer>();
-            services.AddHostedService<RepoHostedJob>();
+            //services.AddHostedService<RepoHostedJob>();
 
             return services;
         }
