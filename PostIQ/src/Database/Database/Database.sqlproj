@@ -63,6 +63,8 @@
     <Folder Include="Published\" />
     <Folder Include="Published\Tables\" />
     <Folder Include="Security\" />
+    <Folder Include="Home" />
+    <Folder Include="Home\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="User\Tables\Published.sql" />
@@ -74,5 +76,7 @@
     <Build Include="Published\Tables\Repos.sql" />
     <Build Include="Security\Published.sql" />
     <Build Include="Security\User.sql" />
+    <Build Include="Security\Home.sql" />
+    <Build Include="Home\Tables\Posts.sql" />
   </ItemGroup>
 </Project>
