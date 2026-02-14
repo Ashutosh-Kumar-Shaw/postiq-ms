@@ -10,7 +10,7 @@ namespace PostIQ.Core.Shared.Enums
         New,
         Pending,
         InProgress,
-        Suceeded,
+        Succeeded,
         Failed,
     }
 }
