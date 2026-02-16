@@ -3,9 +3,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PostIQ.Core.Database.Extension;
 using Published.Core.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Published.Infrastructure.Extension
 {

@@ -78,5 +78,6 @@
     <Build Include="Security\User.sql" />
     <Build Include="Security\Home.sql" />
     <Build Include="Home\Tables\Posts.sql" />
+    <Build Include="Home\Tables\BatchJobStatus.sql" />
   </ItemGroup>
 </Project>

@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Insert\" />
-    <Folder Include="Commands\Update\" />
+    <Compile Remove="Commands\Insert\**" />
+    <Compile Remove="Commands\Update\**" />
+    <EmbeddedResource Remove="Commands\Insert\**" />
+    <EmbeddedResource Remove="Commands\Update\**" />
+    <None Remove="Commands\Insert\**" />
+    <None Remove="Commands\Update\**" />
   </ItemGroup>
 
   <ItemGroup>
