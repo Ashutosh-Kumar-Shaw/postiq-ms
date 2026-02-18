@@ -11,12 +11,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContextExtension(builder.Configuration);
+builder.Services.AddJobExtension(builder.Configuration);
 builder.Services.AddServiceCollectionExtensions(builder.Configuration,
     typeof(Published.Core.Entities.Job).Assembly,
-    typeof(Published.Application.Queries.GetNextExecJobQuery).Assembly,
-    typeof(Published.Infrastructure.Services.MediumService).Assembly
+    typeof(Published.Core.Entities.Repo).Assembly,
+    typeof(Published.Infrastructure.Services.MediumService).Assembly,
+    typeof(PostIQ.Core.AI.LLM.GeminiLlmClient).Assembly
 );
-builder.Services.AddJobExtension(builder.Configuration);
 
 var app = builder.Build();
 

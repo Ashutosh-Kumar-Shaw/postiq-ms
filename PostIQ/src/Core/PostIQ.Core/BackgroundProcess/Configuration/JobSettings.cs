@@ -37,6 +37,9 @@ namespace PostIQ.Core.BackgroundProcess.Configuration
         /// </summary>
         public int ProductionIntervalMs { get; set; } = 60000;
 
-
+        /// <summary>
+        /// Interval in milliseconds to set as NextExecutionTime after processing a job. Default: 60000 (1 min)
+        /// </summary>
+        public int NextExecutionIntervalMs { get; set; } = 60000;
     }
 }

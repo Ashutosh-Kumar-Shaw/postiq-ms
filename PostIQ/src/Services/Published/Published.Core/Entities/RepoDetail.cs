@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace Published.Core.Entities;
 
@@ -18,7 +16,7 @@ public partial class RepoDetail
     [Unicode(false)]
     public string? Key { get; set; }
 
-    [Unicode(false)]
+    [Unicode(true)]
     public string? Value { get; set; }
 
     public int? Ordered { get; set; }
