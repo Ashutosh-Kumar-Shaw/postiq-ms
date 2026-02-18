@@ -33,6 +33,7 @@
                     MaxConcurrentConsumers = setting.MaxConcurrentConsumers > 0 ? setting.MaxConcurrentConsumers : d?.MaxConcurrentConsumers ?? 5,
                     ProductionIntervalMs = setting.ProductionIntervalMs > 0 ? setting.ProductionIntervalMs : d?.ProductionIntervalMs ?? 60000,
                     FullMode = setting.FullMode ?? d.FullMode ?? "Wait",
+                    NextExecutionIntervalMs = setting.NextExecutionIntervalMs > 0 ? setting.NextExecutionIntervalMs : d?.NextExecutionIntervalMs ?? 60000,
                 };
             }
 

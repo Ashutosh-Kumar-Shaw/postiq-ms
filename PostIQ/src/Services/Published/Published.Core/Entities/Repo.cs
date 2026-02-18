@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace Published.Core.Entities;
 
@@ -24,9 +22,8 @@ public partial class Repo
     [Unicode(false)]
     public string RepoUrl { get; set; } = null!;
 
-    [StringLength(10)]
     [Unicode(false)]
-    public string Status { get; set; } = null!;
+    public int Status { get; set; }
 
     [StringLength(100)]
     [Unicode(false)]
@@ -44,6 +41,8 @@ public partial class Repo
     public DateTime? UpdatedOn { get; set; }
 
     public long? UpdatedBy { get; set; }
+
+    public string MetaData { get; set; } = null!;
 
     [ForeignKey("JobId")]
     [InverseProperty("Repos")]

@@ -61,7 +61,7 @@ namespace PostIQ.Core.Shared.Extensions
 
             foreach (var worker in workers)
             {
-                services.AddHostedService(provider => (BackgroundService)ActivatorUtilities.CreateInstance(provider, worker));
+                services.AddSingleton(typeof(IHostedService), provider => (BackgroundService)ActivatorUtilities.CreateInstance(provider, worker));
             }
 
             return services;

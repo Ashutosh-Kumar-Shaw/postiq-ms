@@ -5,16 +5,16 @@ using PostIQ.Core.BackgroundProcess.Interfaces;
 using PostIQ.Core.BackgroundProcess.Services;
 using Published.Core.Entities;
 
-namespace Published.Infrastructure.Jobs.RepoJobs
+namespace Published.Infrastructure.Jobs.RepoDetailsJobs
 {
-    public class RepoJobHostedService : BaseBackgroundJobHostedService<Job>
+    public class RepoDetailsJobHostedService : BaseBackgroundJobHostedService<Repo>
     {
-        public new const string JobName = "RepoJob";
-        public RepoJobHostedService(
+        public new const string JobName = "RepoDetailsJob";
+        public RepoDetailsJobHostedService(
             IOptions<BackgroundJobsConfiguration> configuration, 
-            ILogger<RepoJobHostedService> logger, 
-            IJobItemsProducer<Job> producer, 
-            IJobItemProcessor<Job> processor, 
+            ILogger<RepoDetailsJobHostedService> logger, 
+            IJobItemsProducer<Repo> producer, 
+            IJobItemProcessor<Repo> processor, 
             IBackgroundJobRegistry registry) : 
             base(JobName, configuration, logger, producer, processor, registry)
         {
