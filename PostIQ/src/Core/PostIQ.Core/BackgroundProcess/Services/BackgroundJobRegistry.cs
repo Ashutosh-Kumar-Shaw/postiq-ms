@@ -1,8 +1,5 @@
 ﻿using PostIQ.Core.BackgroundProcess.Interfaces;
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PostIQ.Core.BackgroundProcess.Services
 {

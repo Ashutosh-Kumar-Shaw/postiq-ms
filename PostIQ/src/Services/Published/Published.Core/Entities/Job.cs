@@ -17,14 +17,11 @@ public partial class Job
     public long UserId { get; set; }
 
     [StringLength(50)]
-    [Unicode(false)]
     public string Source { get; set; } = null!;
 
-    [StringLength(20)]
-    [Unicode(false)]
+    [StringLength(100)]
     public string BaseUrl { get; set; } = null!;
 
-    [StringLength(100)]
     [Unicode(false)]
     public bool IsActive { get; set; } = true;
 
@@ -39,7 +36,7 @@ public partial class Job
     public long? UpdatedBy { get; set; }
 
     [Column(TypeName = "datetime")]
-    public DateTime? ExecutationStartTime { get; set; }
+    public DateTime? ExecutionStartTime { get; set; }
 
     [Column(TypeName = "datetime")]
     public DateTime? NextExecutionTime { get; set; }

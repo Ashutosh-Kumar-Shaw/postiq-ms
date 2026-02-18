@@ -3,13 +3,13 @@
     [PublishedId] BIGINT        NOT NULL,
     [UserId]      BIGINT        NOT NULL,
     [Source]      VARCHAR (50)  NOT NULL,
-    [BaseUrl]     VARCHAR (20)  NOT NULL,
+    [BaseUrl]     VARCHAR (100) NOT NULL,
     [IsActive]    BIT NOT NULL,
     [CreatedOn]   DATETIME      NOT NULL,
     [CreatedBy]   BIGINT        NOT NULL,
     [UpdatedOn]   DATETIME      NULL,
     [UpdatedBy]   BIGINT        NULL,
-    [ExecutationStartTime]   DATETIME      NULL,
+    [ExecutionStartTime]   DATETIME      NULL,
     [NextExecutionTime]   DATETIME      NULL,
     CONSTRAINT [PK_Published.Job] PRIMARY KEY CLUSTERED ([JobId] ASC)
 );

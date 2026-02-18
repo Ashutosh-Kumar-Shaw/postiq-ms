@@ -2,7 +2,7 @@
     [RepoDetailsId] BIGINT        IDENTITY (1, 1) NOT NULL,
     [RepoId]        BIGINT        NOT NULL,
     [Key]           VARCHAR (100) NULL,
-    [Value]         VARCHAR (MAX) NULL,
+    [Value]         NVARCHAR (MAX) NULL,
     [Ordered]       INT           NULL,
     [IsActive]      VARCHAR (100) NOT NULL,
     [CreatedOn]     DATETIME      NOT NULL,
